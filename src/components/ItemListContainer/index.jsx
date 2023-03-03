@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Title from '../Title';
+import ItemList from './ItemList';
 import '../../../src/app.css';
 
-import ItemList from './ItemList';
-
-const productos = [
+//ACA CREAMOS EL LISTADO DE PRODUCTOS
+const producto = [
   {
     id: 1,
     title: 'Producto 1',
@@ -28,23 +28,24 @@ const productos = [
   {
     userId: 1,
     id: 4,
-    title: 'Producto 4',
+    title: 'Producto 6',
     precio: '7900',
     category: 'jardin',
   },
 ];
 
+//ACA COMO CONTAINER, MANEJA TODA LA LOGICA
 const ItemListContainer = ({texto}) => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    const promise = new Promise((resolve) => {
+    const listaProd = new Promise((resolve) => {
       setTimeout(() => {
-        resolve(productos);
+        resolve(producto);
       }, 3000);
     });
 
-    promise.then((res) => {
+    listaProd.then((res) => {
       setList(res);
     });
   }, []);
@@ -53,7 +54,7 @@ const ItemListContainer = ({texto}) => {
     return (
       <div>
       <Title greeting={texto}/>
-      <ItemList todos={list} />
+      <ItemList listadoTotal={list} />
       </div>
   );
 }
@@ -62,12 +63,3 @@ export default ItemListContainer;
 
 
 
-
-//A TITLE LE PASAMOS UNA PROP
-// export const ItemListContainer = ({ texto}) => {
-//     return (
-//         <Title greeting={texto}/>
-//     );
-// }
-
-// export default ItemListContainer;

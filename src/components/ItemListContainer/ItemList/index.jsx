@@ -1,15 +1,16 @@
 import React from 'react';
-//comentario 
-const ItemList = ({ todos }) => {
+import Item from './Item/Item';
+
+//LE PASO COMO PARAMETRO EL ELEMENTO LISTADOTOTAL CREADO EN ITEMLISTCONTAINER
+const ItemList = ({ listadoTotal }) => {
   return (
-    <div>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+    //CREAMOS UN DIV CON UN MAP A LISTADO TOTAL
+    //CREAMOS UN PARAMETRO QUE PEDIRA ID Y TITULO A LISTADOTOTAL
+    //SE CREARA CON LI, UN ARRAY DE ORJETOS TOTAL
+
+    //*********EN CLASE 5 AL FINAL TIENE OTRO CODIGO EN VEZ DE LI, DIV Y UL, VEEEEEEEEERRRRRRRRR
+    listadoTotal.map(producto => <Item key={producto.id} info={producto} />)
+    );
+}
 
 export default ItemList;
