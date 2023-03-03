@@ -1,7 +1,7 @@
 import React from "react";
 import '../../../src/app.css';
 
-export const ItemDetail = ({ list }) => {
+export const ItemDetail = ({ data }) => {
     return (
         //CONTAINER = CONTAINERPROD
         //DETAIL = DETALLEPROD
@@ -10,7 +10,7 @@ export const ItemDetail = ({ list }) => {
             <div className="detalleProd">
                 <img className="detalleImg"/>
                 <div className="content">
-                    <h1>{list.title}</h1>
+                    <h1>{data.title}</h1>
                 </div>
             </div>
         </div>

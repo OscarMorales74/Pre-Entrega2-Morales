@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Title from '../Title';
-import ItemList from './ItemList';
+import ItemList from '../ItemList';
 import '../../../src/app.css';
 
 //ACA CREAMOS EL LISTADO DE PRODUCTOS
