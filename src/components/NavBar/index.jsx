@@ -1,36 +1,32 @@
 import React from "react";
 import IconoCarrito from "../IconoCarrito";
 import Logo from "../Logo/logo.png";
-import "../../../src/app.css"
+import "../../../src/app.css";
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <div className="encabezado">
             <nav className="nav">
-                <div className="navLogo">
-                    <img src={Logo} alt="logo"/>
+                <div>
+                    <NavLink className="navLogo" to='/'><img src={Logo} alt="logo"/></NavLink>
+                    
                 </div>
                     <div>
-                        <a className="icoCarrito" href="#">
+                        <NavLink className="icoCarrito" to='/cart'>
                             <IconoCarrito />
-                        </a>
+                        </NavLink>
                     </div>
                     <span className="contadorCarrito">2</span>
-                <ul className="navLista">
+                <ul className="nav_list">
                     <li>
-                        <a className="linkBoton" href="#">INICIO</a>
+                        <NavLink className="nav_link" to='/'>INICIO</NavLink>
                     </li>
                     <li>
-                        <a className="linkBoton" href="#">NOSOTROS</a>
+                        <NavLink className="nav_link" to='/categoria/hogar'>HOGAR</NavLink>
                     </li>
                     <li>
-                        <a className="linkBoton" href="#">PRODUCTOS</a>
-                    </li>
-                    <li>
-                        <a className="linkBoton" href="#">TRABAJOS</a>
-                    </li>
-                    <li>
-                        <a className="linkBoton" href="#">CONTACTO</a>
+                        <NavLink className="nav_link" to='/categoria/figuras'>FIGURAS</NavLink>
                     </li>
                 </ul>
             </nav>

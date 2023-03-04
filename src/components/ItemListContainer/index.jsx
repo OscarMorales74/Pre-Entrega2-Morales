@@ -1,61 +1,77 @@
 import React, { useEffect, useState } from "react";
 import Title from '../Title';
 import ItemList from '../ItemList';
-import '../../../src/app.css';
+//HOOK PARA FILTRAR CATEGORIAS, USEPARAM USA LOS PARAMETROS DE LA URL
+import { useParams } from 'react-router-dom';
+import '../../app.css';
 
 //ACA CREAMOS EL LISTADO DE PRODUCTOS
-const producto = [
+const productos = [
   {
     id: 1,
-    title: 'Producto 1',
+    title: 'Producto 10',
+    imagen: '../../imgProd/img1.jpg',
     precio: '4900',
     category: 'hogar',
+    alt: 'producto 1'
   },
   {
-    userId: 1,
     id: 2,
     title: 'Producto 2',
+    imagen: '../../imgProd/img1.jpg',
     precio: '5900',
-    category: 'cocina',
+    category: 'figuras',
+    alt: 'producto 2'
   },
   {
-    userId: 1,
     id: 3,
     title: 'Producto 3',
+    imagen: '../../imgProd/img1.jpg',
     precio: '6900',
     category: 'figuras',
+    alt: 'producto 3'
   },
   {
-    userId: 1,
     id: 4,
     title: 'Producto 6',
+    imagen: '../../imgProd/img1.jpg',
     precio: '7900',
-    category: 'jardin',
+    category: 'hogar',
+    alt: 'producto 4'
   },
 ];
 
 //ACA COMO CONTAINER, MANEJA TODA LA LOGICA
-const ItemListContainer = ({texto}) => {
+const ItemListContainer = ({ texto }) => {
+  //ACA CREAMOS LA CONSTANTE LIST, QUE GUARDAMOS EN UN ESTADO Y SE LA ENVIAMOS A ITEMLIST
+  //DATA = LIST CONSTANTE CREADA ACA QUE SE PASA A ITEMLIST
+  //GETDATA = LISTAPROD CONSTANTE INTERNA CREADA ACA
+  //FILMS = PRODUCTOS NOMBRE DEL ARRAY
   const [list, setList] = useState([]);
+
+  //USAMOS DESTRUCTURING PARA HACER EL FILTRO DE CATEGORIAS
+  //CAPTURAR CATEGORIAID PASADO EN APP
+  const { categoriaId } = useParams();
 
   useEffect(() => {
     const listaProd = new Promise((resolve) => {
       setTimeout(() => {
-        resolve(producto);
-      }, 3000);
+        resolve(productos);
+      }, 1000);
     });
+    if (categoriaId) {
+      listaProd.then(res => setList(res.filter(producto => producto.category === categoriaId)));
+    } else {
+      listaProd.then(res => setList(res));
+    }
 
-    listaProd.then((res) => {
-      setList(res);
-    });
-  }, []);
-
+  }, [categoriaId])
 
     return (
-      <div>
-      <Title greeting={texto}/>
-      <ItemList listadoTotal={list} />
-      </div>
+      <>
+        <Title greeting={texto}/>
+        <ItemList lista={list} />
+      </>
   );
 }
 

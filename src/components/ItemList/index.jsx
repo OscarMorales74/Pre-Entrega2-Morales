@@ -1,13 +1,13 @@
 import React from 'react';
-import Item from '../Item/Item'
+import Item from '../Item';
+import '../../app.css';
 
 //LE PASO COMO PARAMETRO EL ELEMENTO LISTADOTOTAL CREADO EN ITEMLISTCONTAINER
-const ItemList = ({ listadoTotal }) => {
+//INFO = INFOPROD SE CREA ACA Y ESTA EN ITEM
+//DATA = LIST CONSTANTE CREADA EN ITEMLISTCONTAINER
+const ItemList = ({ list = [] }) => {
   return (
-    //CREAMOS UN DIV CON UN MAP A LISTADO TOTAL
-    //CREAMOS UN PARAMETRO QUE PEDIRA ID Y TITULO A LISTADOTOTAL
-    //SE CREARA CON LI, UN ARRAY DE ORJETOS TOTAL
-    listadoTotal.map(producto => <Item key={producto.id} info={producto} />)
+    list.map(producto => <Item key={producto.id} infoProd={producto}/>)
     );
 }
 

@@ -1,14 +1,23 @@
 import './app.css';
+//BROWSERROUTER PROVEERA DE RUTAS Y VINCULACION ENTRE PAGINAS
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import IconoCarrito from './components/IconoCarrito';
 
 function App() {
   return (
     <>
-    <NavBar />
-    <ItemListContainer texto='PRODUCTOSdd'/>
-    <ItemDetailContainer />
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path='/' element={<ItemListContainer />} />
+        <Route path='/categoria/:categoriaId' element={<ItemListContainer />} />
+        <Route path='/detalle' element={<ItemDetailContainer />} />
+        <Route path='/cart' element={<IconoCarrito />} />
+      </Routes>
+    </BrowserRouter>
     </>
     );
 }
