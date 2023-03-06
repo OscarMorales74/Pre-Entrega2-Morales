@@ -9,8 +9,8 @@ import '../../app.css';
 const productos = [
   {
     id: 1,
-    title: 'Producto 10',
-    imagen: '../../imgProd/img1.jpg',
+    title: 'Producto 1',
+    imagen: '../../imgProd/prode-fuenteincienso.jpg',
     precio: '4900',
     category: 'hogar',
     alt: 'producto 1'
@@ -18,7 +18,7 @@ const productos = [
   {
     id: 2,
     title: 'Producto 2',
-    imagen: '../../imgProd/img1.jpg',
+    imagen: '../../imgProd/img-tra-cas-dos.jpg',
     precio: '5900',
     category: 'figuras',
     alt: 'producto 2'
@@ -26,7 +26,7 @@ const productos = [
   {
     id: 3,
     title: 'Producto 3',
-    imagen: '../../imgProd/img1.jpg',
+    imagen: '../../imgProd/img3.jpg',
     precio: '6900',
     category: 'figuras',
     alt: 'producto 3'
@@ -34,7 +34,7 @@ const productos = [
   {
     id: 4,
     title: 'Producto 6',
-    imagen: '../../imgProd/img1.jpg',
+    imagen: '../../imgProd/prode-lampara2.jpg',
     precio: '7900',
     category: 'hogar',
     alt: 'producto 4'

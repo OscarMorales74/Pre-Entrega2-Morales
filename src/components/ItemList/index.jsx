@@ -5,9 +5,9 @@ import '../../app.css';
 //LE PASO COMO PARAMETRO EL ELEMENTO LISTADOTOTAL CREADO EN ITEMLISTCONTAINER
 //INFO = INFOPROD SE CREA ACA Y ESTA EN ITEM
 //DATA = LIST CONSTANTE CREADA EN ITEMLISTCONTAINER
-const ItemList = ({ list = [] }) => {
+const ItemList = ({ lista }) => {
   return (
-    list.map(producto => <Item key={producto.id} infoProd={producto}/>)
+    lista.map(producto => <Item key={producto.id} infoProd={producto}/>)
     );
 }
 
