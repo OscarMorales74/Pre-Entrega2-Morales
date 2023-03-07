@@ -43,16 +43,19 @@ const productos = [
 
 //ACA COMO CONTAINER, MANEJA TODA LA LOGICA
 const ItemListContainer = ({ texto }) => {
+  
   //ACA CREAMOS LA CONSTANTE LIST, QUE GUARDAMOS EN UN ESTADO Y SE LA ENVIAMOS A ITEMLIST
   //DATA = LIST CONSTANTE CREADA ACA QUE SE PASA A ITEMLIST
   //GETDATA = LISTAPROD CONSTANTE INTERNA CREADA ACA
   //FILMS = PRODUCTOS NOMBRE DEL ARRAY
+  
   const [list, setList] = useState([]);
-
+  
   //USAMOS DESTRUCTURING PARA HACER EL FILTRO DE CATEGORIAS
   //CAPTURAR CATEGORIAID PASADO EN APP
   const { categoriaId } = useParams();
-
+  
+  
   useEffect(() => {
     const listaProd = new Promise((resolve) => {
       setTimeout(() => {
@@ -64,11 +67,14 @@ const ItemListContainer = ({ texto }) => {
     } else {
       listaProd.then(res => setList(res));
     }
-
-  }, [categoriaId])
-
-    return (
-      <>
+    
+  }, [categoriaId]);
+  
+ 
+  
+  return (
+    //initial es valor inicial en el contador
+    <>
         <Title greeting={texto}/>
         <ItemList lista={list} />
       </>
