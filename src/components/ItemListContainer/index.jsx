@@ -11,7 +11,9 @@ const productos = [
     id: 1,
     title: 'Producto 1',
     imagen: '../../imgProd/prode-fuenteincienso.jpg',
-    precio: '4900',
+    descripcion: 'descripción del producto',
+    descrdetallada: 'descripcion detallada del producto',
+    precio: '$4900',
     category: 'hogar',
     alt: 'producto 1'
   },
@@ -19,7 +21,9 @@ const productos = [
     id: 2,
     title: 'Producto 2',
     imagen: '../../imgProd/img-tra-cas-dos.jpg',
-    precio: '5900',
+    descripcion: 'descripción del producto',
+    descrdetallada: 'descripcion detallada del producto',
+    precio: '$5900',
     category: 'figuras',
     alt: 'producto 2'
   },
@@ -27,7 +31,9 @@ const productos = [
     id: 3,
     title: 'Producto 3',
     imagen: '../../imgProd/img3.jpg',
-    precio: '6900',
+    descripcion: 'descripción del producto',
+    descrdetallada: 'descripcion detallada del producto',
+    precio: '$6900',
     category: 'figuras',
     alt: 'producto 3'
   },
@@ -35,7 +41,9 @@ const productos = [
     id: 4,
     title: 'Producto 6',
     imagen: '../../imgProd/prode-lampara2.jpg',
-    precio: '7900',
+    descripcion: 'descripción del producto',
+    descrdetallada: 'descripcion detallada del producto',
+    precio: '$7900',
     category: 'hogar',
     alt: 'producto 4'
   },
@@ -75,8 +83,10 @@ const ItemListContainer = ({ texto }) => {
   return (
     //initial es valor inicial en el contador
     <>
-        <Title greeting={texto}/>
-        <ItemList lista={list} />
+        <div className='contenedorProd'>
+          <Title greeting={texto}/>
+          <ItemList lista={list} />
+        </div>
       </>
   );
 }

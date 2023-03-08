@@ -7,7 +7,10 @@ import '../../app.css';
 //DATA = LIST CONSTANTE CREADA EN ITEMLISTCONTAINER
 const ItemList = ({ lista }) => {
   return (
-    lista.map(producto => <Item key={producto.id} infoProd={producto}/>)
+    lista.map(producto => 
+    <Item key={producto.id} infoProd={producto}/>
+    )
+    
     );
 }
 

@@ -3,39 +3,47 @@ import ItemDetail from "../ItemDetail";
 import { useParams } from 'react-router-dom';
 
 const productos = [
-    {
-      id: 1,
-      title: 'Producto 1',
-      imagen: '../../imgProd/prode-fuenteincienso.jpg',
-      precio: '4900',
-      category: 'hogar',
-      alt: 'producto 1'
-    },
-    {
-      id: 2,
-      title: 'Producto 2',
-      imagen: '../../imgProd/img-tra-cas-dos.jpg',
-      precio: '5900',
-      category: 'figuras',
-      alt: 'producto 2'
-    },
-    {
-      id: 3,
-      title: 'Producto 3',
-      imagen: '../../imgProd/img3.jpg',
-      precio: '6900',
-      category: 'figuras',
-      alt: 'producto 3'
-    },
-    {
-      id: 4,
-      title: 'Producto 6',
-      imagen: '../../imgProd/prode-lampara2.jpg',
-      precio: '7900',
-      category: 'hogar',
-      alt: 'producto 4'
-    },
-  ];
+  {
+    id: 1,
+    title: 'Producto 1',
+    imagen: '../../imgProd/prode-fuenteincienso.jpg',
+    descripcion: 'descripción del producto',
+    descrdetallada: 'descripcion detallada del producto',
+    precio: '$4900',
+    category: 'hogar',
+    alt: 'producto 1'
+  },
+  {
+    id: 2,
+    title: 'Producto 2',
+    imagen: '../../imgProd/img-tra-cas-dos.jpg',
+    descripcion: 'descripción del producto',
+    descrdetallada: 'descripcion detallada del producto',
+    precio: '$5900',
+    category: 'figuras',
+    alt: 'producto 2'
+  },
+  {
+    id: 3,
+    title: 'Producto 3',
+    imagen: '../../imgProd/img3.jpg',
+    descripcion: 'descripción del producto',
+    descrdetallada: 'descripcion detallada del producto',
+    precio: '$6900',
+    category: 'figuras',
+    alt: 'producto 3'
+  },
+  {
+    id: 4,
+    title: 'Producto 6',
+    imagen: '../../imgProd/prode-lampara2.jpg',
+    descripcion: 'descripción del producto',
+    descrdetallada: 'descripcion detallada del producto',
+    precio: '$7900',
+    category: 'hogar',
+    alt: 'producto 4'
+  },
+];
 
 //DATA = LISTA
 //SETDATA = SETLISTA 

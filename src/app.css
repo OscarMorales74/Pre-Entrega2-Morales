@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-
+/* ESTILOS DEL NAV */
 .nav {
   position: sticky;
   display: flex;
@@ -13,27 +13,20 @@
   justify-content: space-between;/*separa horizontalmente la imagen y el nav*/
   align-items: center;
   height: 80px;
-  background: linear-gradient(to bottom, #ffffff,  #e8e7e7, #c1c1c1,#8f8f8f);
-}
-
+  background: linear-gradient(to bottom, #ffffff,  #e8e7e7, #c1c1c1,#8f8f8f); }
 .navLogo {
   height: 60px;
   display: flex;
-  margin-left: 2rem;
-}
-
+  margin-left: 2rem; }
 .icoCarrito {
   height: 50px;
   padding-left: 2rem;
-  padding-right: 1rem;
-}
-
+  padding-right: 1rem; }
 .contadorCarrito {
   display: flex;
   font-size: 1.2rem;
   line-height: 2rem;
 }
-
 .nav_list {/* prop el nav */
   display: flex;
   flex-direction: row;
@@ -53,78 +46,110 @@
   text-decoration: none;
 }
 
-
 .nav_link {
   margin: 0 0.4rem;
   text-decoration: none;
 }
 
-.prod {
-  display: block;
-  width: 300px;
-}
-
-.prod img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+/* ESTILOS DEL DETALLE DE PRODUCTOS */
 .containerProd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 95%;
+  height: 40rem;
+  margin: 3rem;
+  padding: 1rem;
+  border: solid 2px #000000;
+  border-radius: 10px; }
+.containerProd .detalleImg {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 550px;
+  height: 80%;
+  object-fit: cover;
+  margin: 1rem; }
+.containerProd .content {
+  display: block;
+  position: absolute;
+  top: 5rem;
+  left: 50rem;
+  width: 100%;
+}
+
+/* ESTILOS DE CONTENEDOR DE PRODUCTOS EN ITEMLISTCONTAINER */
+/* DE LA CARD (PROD) EN ITEM*/
+/* DE LA IMAGEN DENTRO DA LA CARD (PRODIMG)EN ITEM */
+/* DE LOS TEXTOS DENTRO DEL PRODUCTO */
+.contenedorProd {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   justify-items: stretch;
-  width: 95%;
-  margin: auto;
-  margin: 3rem;
-  border: solid 2px #da1111
-}
+  gap: 0.6rem;
+  width: 100%;
+  background: linear-gradient(to bottom, #ffffffe9, #c3c3c3e6, #cbcbcbf2, #f8f8f8f2);}
 
-/* ESTILO DE LA CARD */
-.detalleProd {
+.contenedorProd .prod {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   width: 15rem;
   height: 25rem;
-  margin: 3rem;
-  border: solid 2px #c3c3c3;
+  margin: 3rem;background: linear-gradient(to bottom, #ffffffe9, #c3c3c3e6, #cbcbcbf2, #f8f8f8f2);
+  transition: 0.3s ease all;
   border-radius: 10px;
-}
+  box-shadow: 0 0 2px black; }
+  .contenedorProd .prod:hover {
+    scale: 1.02;
+    background: white;
+    box-shadow: 0 1px 5px black;  }
 
-.detalleImg {
-  width: 100%;
+.contenedorProd .prod .prodImg {
+  width: 90%;
   height: 50%;
   position: absolute;
   object-fit: cover;
   margin: 1rem;
-}
+  border: 1px solid #ddd;
+  border-radius: 10px 10px 0 0;}
 
-.content {
+.contenedorProd .prod .tituloProdList {
   position: absolute;
-  top: 15rem;
-  width: 100%;
-}
+  text-align: start;
+  top: 60%;
+  left: 1.5rem;
+  font-size: 2.0rem;
+  color: #000;
+  overflow: hidden;
+  overflow-wrap: break-word;}
 
-.prod {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 25rem;
-  height: 25rem;
-  margin: 3rem;
-  border: solid 2px #c3c3c3;
-  border-radius: 10px;
-}
-
-.prodImg {
-  width: 100%;
-  height: 50%;
+.contenedorProd .prod .descripcionProdList {
+  text-align: start;
   position: absolute;
-  object-fit: cover;
-  margin: 1rem;
-}
+  top: 72%;
+  left: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  font-weight: lighter;
+  height: 2rem;
+  width: 80%;
+  color: #000000;
+  overflow: hidden; }
+
+  .contenedorProd .prod .precioProdList {
+    font-weight: bold;
+    text-align: right;
+    position: absolute;
+    bottom: 4px;
+    right: 1rem;
+    padding-right: 0.4rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.8rem;
+    width: 40%;
+    color: #000000; }

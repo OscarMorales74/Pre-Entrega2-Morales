@@ -18,18 +18,16 @@ export const ItemDetail = ({ lista }) => {
         //DETAIL = DETALLEPROD
         //DETAIL_IMAGE = DETALLEIMG 
         <div className="containerProd">
-            <div className="detalleProd">
                 <img className="detalleImg" src={lista.imagen} alt={lista.alt} />
                 <div className="content">
-                    <h1>{lista.title}</h1>
-                    <p> {lista.mensaje}</p>
+                    <h1 className="tituloDetalle">{lista.title}</h1>
+                    <p> {lista.descrdetallada}</p>
                     {
                         goToCart
                         ? <Link to='/cart'>Terminar Compra</Link>
                         : <ItemCount initial={1} stock={5} onAdd={onAdd} />
                     }
                 </div>
-            </div>
         </div>
     );
 }
